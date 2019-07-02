@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/fingerauth': {
+      target: 'http://mp.redfinger.cn',
+      changeOrigin: true,
+      pathRewrite: {
+      '^/fingerauth': '/fingerauth'
+      },
+		}
+	},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

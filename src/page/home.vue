@@ -35,6 +35,7 @@
 
 <script>
 import Toast from '../components/toast' //引入组件
+import axios from 'axios'//用于请求接口 vue-resource插件官方不再维护
 export default {
   name: 'HomePage',
   components:{
@@ -88,6 +89,13 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    // 已经在config/index.js中设置代理域名(处理跨域)
+    var url = '/fingerauth/share/getShare.html?v=1.2.7&source=com.redfinger.app&client=miniprogram&shareType=wx'
+    axios.get(url).then(function(res){
+      console.log(res);
+    })
   },
   methods: {
     changeTab:function(id){
