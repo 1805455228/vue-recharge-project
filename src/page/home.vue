@@ -29,7 +29,7 @@
 				</router-link>
       </li>
     </ul>
-    <Toast ref="toast"/>
+    <Toast ref="toast" v-on:pushMsgFather="listen"/>
   </div>
 </template>
 
@@ -132,6 +132,9 @@ export default {
         this.chooseGoodsId = -1;
         // console.log('号码长度不合法');
       }
+    },
+    listen:function(text){
+      console.log(text)
     }
   },
 

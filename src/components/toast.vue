@@ -9,7 +9,7 @@ export default {
 		show:false,
 		message:''
     };
-  },
+	},
   methods: {
 	  getParentParam:function(text){
 		  console.log(text)
@@ -17,7 +17,9 @@ export default {
 		  this.message = text;
 		  setTimeout(() => {
 			  this.show = false;
-			  this.message = '';
+				this.message = '';
+				// 自定义事件 pushMsgFather 
+				this.$emit('pushMsgFather','子组件传值给你');
 		  }, 1.5 * 1000);
 	  }
   },
