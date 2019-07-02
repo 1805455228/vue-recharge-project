@@ -18,4 +18,8 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+一个vue.js充值页面demo，包含以下功功能：
+1.input数据绑定
+2.列表数据循环渲染
+3.父组件与子组件的传值
+4.路由router-link页面跳转传参
