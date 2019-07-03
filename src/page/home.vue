@@ -29,6 +29,7 @@
 				</router-link>
       </li>
     </ul>
+    <!-- <div>{{userName}}</div> -->
     <Toast ref="toast" v-on:pushMsgFather="listen"/>
   </div>
 </template>
@@ -36,6 +37,7 @@
 <script>
 import Toast from '../components/toast' //引入组件
 import axios from 'axios'//用于请求接口 vue-resource插件官方不再维护
+import {mapState} from 'vuex'
 export default {
   name: 'HomePage',
   components:{
@@ -90,7 +92,13 @@ export default {
       ],
     }
   },
+  computed: {
+    // mapState 借助state直接读取 相当于 this.$store.state.userName
+    ...mapState(['userName']),
+  },
   mounted() {
+    console.log(this.$store.state.userName);
+    this.$store.commit('updateUserName','吴彦祖');
     // 已经在config/index.js中设置代理域名(处理跨域)
     var url = '/fingerauth/share/getShare.html?v=1.2.7&source=com.redfinger.app&client=miniprogram&shareType=wx'
     axios.get(url).then(function(res){

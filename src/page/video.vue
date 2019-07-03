@@ -12,7 +12,8 @@
 			};
 		},
 		created() {
-			this.id = this.$route.params['id']
+			this.id = this.$route.params['id'];
+			console.log(this.$store.state.userName);
 		},
 	}
 </script>
